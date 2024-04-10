@@ -51,6 +51,16 @@ st.markdown(
     .stApp {
         background-color: #f0f2f6;
     }
+    .error-message {
+        color: #ff5733;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .success-message {
+        color: #1f8b4c;
+        font-size: 24px;
+        font-weight: bold;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -77,6 +87,6 @@ if st.button('Predict'):
     result = model.predict(vector_input)[0]
     # Display result
     if result == 1:
-        st.error("Spam")
+        st.markdown("<p class='error-message'>Spam</p>", unsafe_allow_html=True)
     else:
-        st.success("Not Spam")
+        st.markdown("<p class='success-message'>Not Spam</p>", unsafe_allow_html=True)
