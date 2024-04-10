@@ -5,21 +5,6 @@ from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
 
-import os
-
-
-
-def download_nltk_resources():
-    nltk_data_dir = os.path.join(os.environ.get('NLTK_DATA', ''), 'tokenizers')
-    if not os.path.exists(nltk_data_dir):
-        os.makedirs(nltk_data_dir)
-    nltk.data.path.append(nltk_data_dir)
-    if not os.path.exists(os.path.join(nltk_data_dir, 'punkt')):
-        nltk.download('punkt', download_dir=nltk_data_dir)
-
-# Run the function to download NLTK resources
-download_nltk_resources()
-
 
 ps = PorterStemmer()
 
