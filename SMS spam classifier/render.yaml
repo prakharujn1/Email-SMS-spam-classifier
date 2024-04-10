@@ -1,0 +1,4 @@
+services:
+  - name: web
+    # Assuming your application entry point is 'app.py'
+    startupCommand: python initialize.py && python app.py
